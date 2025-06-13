@@ -1,6 +1,5 @@
-
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -70,6 +69,15 @@ export const Testimonials = () => {
       image: '/lovable-uploads/5c38206a-0399-435e-b233-a659616dbefb.png'
     }
   ];
+
+  // Auto-scroll every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
