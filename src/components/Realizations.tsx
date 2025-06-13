@@ -1,4 +1,11 @@
-export const Realizations = () => {
+
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+
+interface RealizationsProps {
+  onShowForm?: () => void;
+}
+
+export const Realizations = ({ onShowForm }: RealizationsProps) => {
   const realizations = [{
     image: '/lovable-uploads/c9440a32-39ed-48d2-992b-d622001fd03b.png',
     title: 'Design contemporain bois & verre',
@@ -50,97 +57,130 @@ export const Realizations = () => {
     category: 'Design avant-gardiste',
     description: 'L\'audace au service de l\'esthétique'
   }];
-  return <section className="py-20 bg-gradient-to-br from-maporte-beige to-white overflow-hidden">
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-maporte-beige to-white overflow-hidden">
       <div className="container-maporte">
         {/* Header with enhanced typography */}
         <div className="text-center mb-20 animate-fade-in">
-          
           <h2 className="text-4xl lg:text-5xl font-jost font-semibold text-maporte-black mb-6 tracking-tight">
             Inspirez-vous
           </h2>
           <p className="text-xl text-maporte-gray-medium font-roboto max-w-3xl mx-auto leading-relaxed">
-            Découvrez notre galerie d'exception : des portes d'entrée qui redéfinissent l'art de l'accueil
+            Chaque porte raconte une histoire. Découvrez comment nos créations sur-mesure transforment l'entrée en véritable signature architecturale.
           </p>
         </div>
 
-        {/* Masonry Grid avec animations staggerées */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-          {realizations.map((realization, index) => <div key={index} className={`
-                group cursor-pointer animate-fade-in transform-gpu
-                ${index % 4 === 0 ? 'xl:row-span-2' : ''}
-                ${index % 3 === 1 ? 'md:translate-y-12' : ''}
-                ${index % 4 === 2 ? 'xl:translate-y-16' : ''}
-              `} style={{
-          animationDelay: `${index * 100}ms`
-        }}>
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2">
-                {/* Image container avec overlay sophistiqué */}
-                <div className="relative overflow-hidden">
-                  <div className={`
-                    ${index % 4 === 0 ? 'aspect-[3/4]' : 'aspect-[4/3]'}
-                    overflow-hidden
-                  `}>
-                    <img src={realization.image} alt={realization.title} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" />
-                  </div>
-                  
-                  {/* Gradient overlay raffiné */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/90 via-maporte-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Badge catégorie flottant */}
-                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-roboto font-medium bg-white/90 backdrop-blur-sm text-maporte-black">
-                      {realization.category}
-                    </span>
-                  </div>
+        {/* Desktop: Masonry Grid with better distribution */}
+        <div className="hidden lg:grid grid-cols-4 gap-4 mb-20">
+          {realizations.map((realization, index) => {
+            // Better distribution pattern for visual appeal
+            const getGridClasses = (idx: number) => {
+              const patterns = [
+                'col-span-2 row-span-2', // Large square
+                'col-span-1 row-span-1', // Small
+                'col-span-1 row-span-2', // Tall
+                'col-span-1 row-span-1', // Small
+                'col-span-2 row-span-1', // Wide
+                'col-span-1 row-span-1', // Small
+                'col-span-1 row-span-2', // Tall
+                'col-span-2 row-span-1', // Wide
+                'col-span-1 row-span-1', // Small
+                'col-span-1 row-span-1', // Small
+              ];
+              return patterns[idx % patterns.length];
+            };
 
-                  {/* Contenu principal au survol */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
-                    <h3 className="text-xl font-jost font-semibold mb-3 leading-tight">
-                      {realization.title}
-                    </h3>
-                    <p className="text-white/90 font-roboto text-sm leading-relaxed">
-                      {realization.description}
-                    </p>
+            return (
+              <div 
+                key={index} 
+                className={`group cursor-pointer animate-fade-in transform-gpu ${getGridClasses(index)}`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2 h-full">
+                  <div className="relative overflow-hidden h-full">
+                    <img 
+                      src={realization.image} 
+                      alt={realization.title} 
+                      className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" 
+                    />
                     
-                    {/* Indicateur visuel élégant */}
-                    <div className="flex items-center mt-4 space-x-2">
-                      <div className="w-1 h-1 bg-maporte-orange rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-maporte-orange rounded-full animate-pulse" style={{
-                    animationDelay: '200ms'
-                  }}></div>
-                      <div className="w-1 h-1 bg-maporte-orange rounded-full animate-pulse" style={{
-                    animationDelay: '400ms'
-                  }}></div>
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/90 via-maporte-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Badge catégorie */}
+                    <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-roboto font-medium bg-white/90 backdrop-blur-sm text-maporte-black">
+                        {realization.category}
+                      </span>
                     </div>
-                  </div>
 
-                  {/* Effet de brillance au survol */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                </div>
+                    {/* Contenu au survol */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
+                      <h3 className="text-xl font-jost font-semibold mb-3 leading-tight">
+                        {realization.title}
+                      </h3>
+                      <p className="text-white/90 font-roboto text-sm leading-relaxed">
+                        {realization.description}
+                      </p>
+                    </div>
 
-                {/* Contenu visible par défaut sur mobile */}
-                <div className="p-6 lg:hidden">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-roboto font-medium text-maporte-orange bg-maporte-orange/10 px-2 py-1 rounded-full">
-                      {realization.category}
-                    </span>
+                    {/* Effet de brillance */}
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                   </div>
-                  <h3 className="text-lg font-jost font-semibold text-maporte-black mb-2 leading-tight">
-                    {realization.title}
-                  </h3>
-                  <p className="text-maporte-gray-medium font-roboto text-sm">
-                    {realization.description}
-                  </p>
                 </div>
               </div>
-            </div>)}
+            );
+          })}
         </div>
 
-        {/* Call to action avec animation */}
-        <div className="text-center mt-20 animate-fade-in" style={{
-        animationDelay: '1000ms'
-      }}>
-          <div className="inline-flex items-center space-x-4 bg-white rounded-2xl px-8 py-6 shadow-xl hover:shadow-2xl transition-all duration-500 group cursor-pointer border border-maporte-orange/10">
+        {/* Mobile & Tablet: Horizontal Scroll Carousel */}
+        <div className="lg:hidden mb-20">
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-4">
+              {realizations.map((realization, index) => (
+                <CarouselItem key={index} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3">
+                  <div className="group cursor-pointer transform-gpu">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
+                      <div className="relative overflow-hidden aspect-[3/4]">
+                        <img 
+                          src={realization.image} 
+                          alt={realization.title} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                        />
+                        
+                        {/* Mobile overlay content */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/80 via-transparent to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                          <div className="mb-2">
+                            <span className="text-xs font-roboto font-medium text-maporte-orange bg-maporte-orange/20 px-2 py-1 rounded-full backdrop-blur-sm">
+                              {realization.category}
+                            </span>
+                          </div>
+                          <h3 className="text-lg font-jost font-semibold mb-2 leading-tight">
+                            {realization.title}
+                          </h3>
+                          <p className="text-white/90 font-roboto text-sm">
+                            {realization.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
+        </div>
+
+        {/* Call to action with form trigger */}
+        <div className="text-center animate-fade-in" style={{ animationDelay: '1000ms' }}>
+          <div 
+            onClick={onShowForm}
+            className="inline-flex items-center space-x-4 bg-white rounded-2xl px-8 py-6 shadow-xl hover:shadow-2xl transition-all duration-500 group cursor-pointer border border-maporte-orange/10 hover:border-maporte-orange/30"
+          >
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-r from-maporte-orange to-maporte-orange/80 rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,12 +192,13 @@ export const Realizations = () => {
                   Prêt à créer la vôtre ?
                 </p>
                 <p className="text-maporte-gray-medium font-roboto text-sm">
-                  Découvrez nos solutions sur mesure
+                  Recevez votre devis personnalisé
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
