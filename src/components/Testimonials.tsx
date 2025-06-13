@@ -91,7 +91,7 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
             {[0, 1, 2].map((offset) => {
               const index = (currentIndex + offset) % testimonials.length;
@@ -100,16 +100,17 @@ export const Testimonials = () => {
               return (
                 <div 
                   key={index}
-                  className={`bg-white rounded-2xl shadow-lg transition-transform duration-300 h-[500px] flex flex-col ${
+                  className={`bg-white rounded-2xl shadow-lg transition-transform duration-300 h-[650px] flex flex-col ${
                     offset === 1 ? 'md:scale-105 md:z-10' : 'md:scale-95'
                   }`}
                 >
-                  {/* Image de la porte */}
-                  <div className="h-48 overflow-hidden rounded-t-2xl">
+                  {/* Image de la porte - format plus vertical */}
+                  <div className="h-80 overflow-hidden rounded-t-2xl">
                     <img 
                       src={testimonial.image} 
                       alt={`Porte installée chez ${testimonial.name}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
+                      style={{ objectPosition: 'center' }}
                     />
                   </div>
                   
@@ -121,7 +122,7 @@ export const Testimonials = () => {
                       ))}
                     </div>
                     
-                    <p className="text-maporte-black font-roboto mb-4 italic text-sm leading-relaxed flex-1 overflow-hidden">
+                    <p className="text-maporte-black font-roboto mb-6 italic text-sm leading-relaxed flex-1 overflow-hidden">
                       "{testimonial.text}"
                     </p>
                     
