@@ -7,46 +7,67 @@ export const Testimonials = () => {
   
   const testimonials = [
     {
-      name: 'Jean C.',
-      location: 'Yverdon',
+      name: 'Martine MNP',
+      location: 'Corcelles-Cormondrèche (NE)',
       rating: 5,
-      text: 'Isolation bluffante, plus de courants d\'air, service super ! L\'équipe Ma Porte a été d\'un professionnalisme exemplaire.'
+      text: 'Entreprise faisant preuve d\'un grand professionnalisme. La pose de la porte, constituée de matériaux de haute qualité, a été effectuée de manière rapide et soignée et nous donne entière satisfaction. Ma porte Sàrl est une adresse à vivement recommander.',
+      image: '/lovable-uploads/99ab8d39-2102-44d6-953d-abd85cbf27c0.png'
     },
     {
-      name: 'Sophie & Marc',
-      location: 'Gland',
+      name: 'Cédric Ducrest',
+      location: 'Marly (FR)',
       rating: 5,
-      text: 'Résultat au-delà de nos attentes : porte unique, LED intégrées. Le configurateur en ligne est fantastique.'
+      text: 'Super travail; du conseil à la proposition et la réalisation, tout a été parfait et conforme aux attentes.',
+      image: '/lovable-uploads/4e5df394-3a9e-4eaf-8b6e-3148c80e00a1.png'
     },
     {
-      name: 'Michel D.',
-      location: 'Fribourg',
+      name: 'Mathilde-Elsa Zinggeler',
+      location: 'Anières (GE)',
       rating: 5,
-      text: 'Après le cambriolage, je dors enfin tranquille. SAV irréprochable. La sécurité RC3 fait vraiment la différence.'
+      text: 'Un grand merci à Monsieur Cretenoud pour son professionnalisme, sa patience et son perfectionnisme. Monsieur Cretenoud a su être à notre écoute et nous a intelligemment conseillé sur le type de porte choisie. Le résultat est à la hauteur de nos attentes. Vous pouvez y aller les yeux fermés !',
+      image: '/lovable-uploads/9f340406-349f-4268-a818-ed31684c9eb8.png'
     },
     {
-      name: 'Catherine L.',
-      location: 'Neuchâtel',
+      name: 'Fanny Manzanares',
+      location: 'Concise (VD)',
       rating: 5,
-      text: 'Installation en une journée comme promis. Les menuisiers sont très propres et professionnels. Excellent suivi.'
+      text: 'Plus que satisfait! L\'entreprise Ma Porte, en particulier M. Cretenoud, nous a accompagné pour imaginer, créer et rendre réalisable notre projet avec de précieux conseils et un grand investissement. Un travail de grande qualité, fourni avec engagement et enthousiasme.',
+      image: '/lovable-uploads/3d03bcfe-850e-4e17-a0d0-16d8d70236b3.png'
     },
     {
-      name: 'Pierre-Alain',
-      location: 'Valais',
+      name: 'Laura Baumlin',
+      location: 'Le Locle (NE)',
       rating: 5,
-      text: 'Économies de chauffage visibles dès le premier hiver. Investissement rentabilisé plus vite que prévu.'
+      text: 'Nous avons fait appel aux services de Ma Porte Sàrl pour le choix de notre porte d\'entrée et nous en sommes plus que satisfaits! La porte est d\'une superbe qualité tant sur l\'isolation que sur l\'aspect visuel. La qualité prix est également excellente!',
+      image: '/lovable-uploads/e0946b45-dd0b-4a84-9828-d763b8caf1fb.png'
     },
     {
-      name: 'Famille Dubois',
-      location: 'Genève',
+      name: 'Sybille Perroud',
+      location: 'Mont-la-Ville (VD)',
       rating: 5,
-      text: 'Design parfaitement intégré à notre maison moderne. Nombreux compliments de nos voisins !'
+      text: 'Entreprise sérieuse et professionnelle du début à la fin. Super qualité de produit et installation tip top. Fiable et respecte les délais',
+      image: '/lovable-uploads/94c1094c-4083-420a-8a8a-652a80f62923.png'
     },
     {
-      name: 'Laurent M.',
-      location: 'Lausanne',
+      name: 'Olivier Bader',
+      location: 'Granson (VD)',
       rating: 5,
-      text: 'Service client exceptionnel, de la commande au SAV. Je recommande Ma Porte les yeux fermés.'
+      text: 'Nous avons particulièrement apprécié la collaboration avec M. Ludovic Cretenoud : conseils, expertise, fiabilité, attention aux délais et amabilité. Ludovic est du métier et propose un produit de qualité.',
+      image: '/lovable-uploads/dd9f46c8-d64b-4770-b72b-a4d0d2146c53.png'
+    },
+    {
+      name: 'Blaise Corday',
+      location: 'Valeyres-sous-Montagny (VD)',
+      rating: 5,
+      text: 'Un grand merci pour votre travail rapide et efficace ! Les portes sont magnifiques et s\'intègrent parfaitement à notre intérieur. Nous sommes ravis du résultat et tenions à vous remercier pour votre professionnalisme.',
+      image: '/lovable-uploads/f6348aab-c21f-4dba-9852-c253f4951c5b.png'
+    },
+    {
+      name: 'Aurélie Badoux',
+      location: 'Suisse',
+      rating: 5,
+      text: 'Nous avons trouvé l\'entreprise Ma Porte, en particulier M. Cretenoud, qui nous a parfaitement conseillé. Nous sommes particulièrement satisfait d\'avoir choisi une serrure avec un lecteur d\'empreinte, c\'est le top pour nos enfants.',
+      image: '/lovable-uploads/5c38206a-0399-435e-b233-a659616dbefb.png'
     }
   ];
 
@@ -70,7 +91,7 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
             {[0, 1, 2].map((offset) => {
               const index = (currentIndex + offset) % testimonials.length;
@@ -79,25 +100,39 @@ export const Testimonials = () => {
               return (
                 <div 
                   key={index}
-                  className={`bg-white p-6 rounded-2xl shadow-lg transition-transform duration-300 ${
+                  className={`bg-white rounded-2xl shadow-lg transition-transform duration-300 h-[500px] flex flex-col ${
                     offset === 1 ? 'md:scale-105 md:z-10' : 'md:scale-95'
                   }`}
                 >
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
+                  {/* Image de la porte */}
+                  <div className="h-48 overflow-hidden rounded-t-2xl">
+                    <img 
+                      src={testimonial.image} 
+                      alt={`Porte installée chez ${testimonial.name}`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-maporte-black font-roboto mb-4 italic">
-                    "{testimonial.text}"
-                  </p>
-                  <div className="border-t pt-4">
-                    <p className="font-jost font-semibold text-maporte-black">
-                      {testimonial.name}
+                  
+                  {/* Contenu de l'avis */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    
+                    <p className="text-maporte-black font-roboto mb-4 italic text-sm leading-relaxed flex-1 overflow-hidden">
+                      "{testimonial.text}"
                     </p>
-                    <p className="text-maporte-gray-medium text-sm">
-                      {testimonial.location}
-                    </p>
+                    
+                    <div className="border-t pt-4 mt-auto">
+                      <p className="font-jost font-semibold text-maporte-black">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-maporte-gray-medium text-sm">
+                        {testimonial.location}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );
