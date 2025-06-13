@@ -35,7 +35,7 @@ const Index = () => {
       )}
       
       <WhyMaPorte />
-      <Realizations />
+      <Realizations onShowForm={handleShowForm} />
       <Benefits />
       <Process />
       <Testimonials />

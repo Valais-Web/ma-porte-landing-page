@@ -6,57 +6,68 @@ interface RealizationsProps {
 }
 
 export const Realizations = ({ onShowForm }: RealizationsProps) => {
-  const realizations = [{
-    image: '/lovable-uploads/c9440a32-39ed-48d2-992b-d622001fd03b.png',
-    title: 'Design contemporain bois & verre',
-    category: 'Villa moderne',
-    description: 'Une entrée sculpturale qui joue avec les matières naturelles'
-  }, {
-    image: '/lovable-uploads/a8e654c5-a033-456a-ac3c-f84a88fa46b3.png',
-    title: 'Élégance minimaliste',
-    category: 'Architecture contemporaine',
-    description: 'Des lignes pures pour une esthétique intemporelle'
-  }, {
-    image: '/lovable-uploads/c0e010d8-9a98-400d-9001-b6b4b1940b8f.png',
-    title: 'Combinaison bois-métal',
-    category: 'Maison familiale',
-    description: 'Le parfait équilibre entre chaleur et modernité'
-  }, {
-    image: '/lovable-uploads/10dcd534-4ac0-4105-b985-757beb098760.png',
-    title: 'Sophistication urbaine',
-    category: 'Résidence premium',
-    description: 'Une porte qui affirme le caractère de votre habitat'
-  }, {
-    image: '/lovable-uploads/b8725872-63dd-49d0-8770-fd540ead1f46.png',
-    title: 'Pureté architecturale',
-    category: 'Villa contemporaine',
-    description: 'L\'art de sublimer l\'entrée par la simplicité'
-  }, {
-    image: '/lovable-uploads/3257b4c9-3c16-48ab-962e-5ab35c690a91.png',
-    title: 'Raffinement moderne',
-    category: 'Maison de prestige',
-    description: 'Des détails soignés pour une première impression parfaite'
-  }, {
-    image: '/lovable-uploads/6424b3a7-06c7-4b51-a49b-3dacd61ad348.png',
-    title: 'Distinction classique',
-    category: 'Architecture traditionnelle',
-    description: 'L\'élégance qui traverse les époques'
-  }, {
-    image: '/lovable-uploads/38be85ef-9815-40d9-9261-c90032b4ea4c.png',
-    title: 'Harmonie des matières',
-    category: 'Style authentique',
-    description: 'Quand la pierre dialogue avec le verre'
-  }, {
-    image: '/lovable-uploads/23522c80-6978-4a51-a5a0-fdf3b3152a57.png',
-    title: 'Grandeur naturelle',
-    category: 'Villa d\'exception',
-    description: 'Une entrée majestueuse aux proportions parfaites'
-  }, {
-    image: '/lovable-uploads/bdded88f-7c92-4aaf-a5b6-de1f9338483e.png',
-    title: 'Innovation architecturale',
-    category: 'Design avant-gardiste',
-    description: 'L\'audace au service de l\'esthétique'
-  }];
+  const realizations = [
+    {
+      image: '/lovable-uploads/25c679f1-057b-4cc6-8fc2-8c6fb5a765d8.png',
+      title: 'Entrée moderne bois & métal',
+      category: 'Villa contemporaine',
+      description: 'Une porte d\'entrée alliant chaleur du bois et robustesse du métal'
+    },
+    {
+      image: '/lovable-uploads/795d5e1d-d42c-4115-acb4-711a311ad270.png',
+      title: 'Design épuré avec terrasse',
+      category: 'Maison familiale',
+      description: 'Une entrée qui s\'intègre parfaitement dans l\'architecture moderne'
+    },
+    {
+      image: '/lovable-uploads/99da95a3-0a0a-4897-8f23-af409d1f5cd9.png',
+      title: 'Élégance minimaliste',
+      category: 'Architecture contemporaine',
+      description: 'Des lignes pures pour une esthétique intemporelle et raffinée'
+    },
+    {
+      image: '/lovable-uploads/079fc471-4cf2-4762-9c83-c03d8856af7b.png',
+      title: 'Porte vitrée moderne',
+      category: 'Style contemporain',
+      description: 'Luminosité maximale avec sécurité renforcée'
+    },
+    {
+      image: '/lovable-uploads/7836f6c7-0592-421c-b8fb-c3d8d2a2230a.png',
+      title: 'Maison familiale moderne',
+      category: 'Résidence premium',
+      description: 'Une entrée qui reflète le caractère unique de votre habitat'
+    },
+    {
+      image: '/lovable-uploads/ac421f2c-5548-493d-8759-e34d7e4a0e33.png',
+      title: 'Entrée protégée élégante',
+      category: 'Villa d\'exception',
+      description: 'Design contemporain avec protection optimale'
+    },
+    {
+      image: '/lovable-uploads/d120211f-57ce-4216-ac3e-89324f62e8d9.png',
+      title: 'Sophistication urbaine',
+      category: 'Maison de prestige',
+      description: 'Une porte qui affirme votre style architectural'
+    },
+    {
+      image: '/lovable-uploads/e0986479-ab0e-40fc-a2d4-5ad3d3455d42.png',
+      title: 'Design classique moderne',
+      category: 'Architecture traditionnelle',
+      description: 'L\'élégance intemporelle au service de la modernité'
+    },
+    {
+      image: '/lovable-uploads/a0fa0117-87f2-41e9-b92a-f7277d081352.png',
+      title: 'Combinaison pierre & verre',
+      category: 'Style authentique',
+      description: 'Matériaux nobles pour une entrée de caractère'
+    },
+    {
+      image: '/lovable-uploads/55b74da1-d3e7-43d1-b85e-86e9181802b7.png',
+      title: 'Grandeur architecturale',
+      category: 'Design avant-gardiste',
+      description: 'Une entrée majestueuse aux proportions parfaites'
+    }
+  ];
 
   return (
     <section className="py-20 bg-gradient-to-br from-maporte-beige to-white overflow-hidden">
@@ -67,71 +78,62 @@ export const Realizations = ({ onShowForm }: RealizationsProps) => {
             Inspirez-vous
           </h2>
           <p className="text-xl text-maporte-gray-medium font-roboto max-w-3xl mx-auto leading-relaxed">
-            Chaque porte raconte une histoire. Découvrez comment nos créations sur-mesure transforment l'entrée en véritable signature architecturale.
+            Découvrez nos réalisations récentes. Des portes d'entrée sur-mesure qui allient isolation, sécurité et design pour s'adapter parfaitement à votre architecture.
           </p>
         </div>
 
-        {/* Desktop: Masonry Grid with better distribution */}
-        <div className="hidden lg:grid grid-cols-4 gap-4 mb-20">
-          {realizations.map((realization, index) => {
-            // Better distribution pattern for visual appeal
-            const getGridClasses = (idx: number) => {
-              const patterns = [
-                'col-span-2 row-span-2', // Large square
-                'col-span-1 row-span-1', // Small
-                'col-span-1 row-span-2', // Tall
-                'col-span-1 row-span-1', // Small
-                'col-span-2 row-span-1', // Wide
-                'col-span-1 row-span-1', // Small
-                'col-span-1 row-span-2', // Tall
-                'col-span-2 row-span-1', // Wide
-                'col-span-1 row-span-1', // Small
-                'col-span-1 row-span-1', // Small
-              ];
-              return patterns[idx % patterns.length];
-            };
+        {/* Desktop: Horizontal Slider */}
+        <div className="hidden lg:block mb-20">
+          <Carousel 
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-6">
+              {realizations.map((realization, index) => (
+                <CarouselItem key={index} className="pl-6 basis-1/3">
+                  <div className="group cursor-pointer transform-gpu">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2">
+                      <div className="relative overflow-hidden aspect-[4/5]">
+                        <img 
+                          src={realization.image} 
+                          alt={realization.title} 
+                          className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" 
+                        />
+                        
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/90 via-maporte-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        {/* Badge catégorie */}
+                        <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
+                          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-roboto font-medium bg-white/90 backdrop-blur-sm text-maporte-black">
+                            {realization.category}
+                          </span>
+                        </div>
 
-            return (
-              <div 
-                key={index} 
-                className={`group cursor-pointer animate-fade-in transform-gpu ${getGridClasses(index)}`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2 h-full">
-                  <div className="relative overflow-hidden h-full">
-                    <img 
-                      src={realization.image} 
-                      alt={realization.title} 
-                      className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" 
-                    />
-                    
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/90 via-maporte-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Badge catégorie */}
-                    <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-roboto font-medium bg-white/90 backdrop-blur-sm text-maporte-black">
-                        {realization.category}
-                      </span>
+                        {/* Contenu au survol */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
+                          <h3 className="text-xl font-jost font-semibold mb-3 leading-tight">
+                            {realization.title}
+                          </h3>
+                          <p className="text-white/90 font-roboto text-sm leading-relaxed">
+                            {realization.description}
+                          </p>
+                        </div>
+
+                        {/* Effet de brillance */}
+                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                      </div>
                     </div>
-
-                    {/* Contenu au survol */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
-                      <h3 className="text-xl font-jost font-semibold mb-3 leading-tight">
-                        {realization.title}
-                      </h3>
-                      <p className="text-white/90 font-roboto text-sm leading-relaxed">
-                        {realization.description}
-                      </p>
-                    </div>
-
-                    {/* Effet de brillance */}
-                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4 bg-white/90 border-maporte-gray-medium/20 hover:bg-white" />
+            <CarouselNext className="right-4 bg-white/90 border-maporte-gray-medium/20 hover:bg-white" />
+          </Carousel>
         </div>
 
         {/* Mobile & Tablet: Horizontal Scroll Carousel */}
@@ -149,18 +151,18 @@ export const Realizations = ({ onShowForm }: RealizationsProps) => {
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                         />
                         
-                        {/* Mobile overlay content */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/80 via-transparent to-transparent"></div>
-                        <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                          <div className="mb-2">
+                        {/* Mobile overlay content - only visible on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/90 via-maporte-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-500">
+                          <div className="mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                             <span className="text-xs font-roboto font-medium text-maporte-orange bg-maporte-orange/20 px-2 py-1 rounded-full backdrop-blur-sm">
                               {realization.category}
                             </span>
                           </div>
-                          <h3 className="text-lg font-jost font-semibold mb-2 leading-tight">
+                          <h3 className="text-lg font-jost font-semibold mb-2 leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                             {realization.title}
                           </h3>
-                          <p className="text-white/90 font-roboto text-sm">
+                          <p className="text-white/90 font-roboto text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
                             {realization.description}
                           </p>
                         </div>
