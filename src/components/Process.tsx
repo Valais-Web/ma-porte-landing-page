@@ -1,11 +1,15 @@
 
-import { Search, Ruler, Cog, CheckCircle } from 'lucide-react';
+import { Search, Ruler, Cog, CheckCircle, ArrowRight } from 'lucide-react';
 
-export const Process = () => {
+interface ProcessProps {
+  onShowForm?: () => void;
+}
+
+export const Process = ({ onShowForm }: ProcessProps) => {
   const steps = [
     {
       icon: Search,
-      title: 'Configuration en ligne / appel expert',
+      title: 'Config. en ligne / appel expert',
       description: 'Choisissez votre modèle et personnalisez-le selon vos goûts'
     },
     {
@@ -37,27 +41,38 @@ export const Process = () => {
           </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-maporte-orange/20 transform -translate-y-1/2"></div>
-          
-          <div className="grid lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="relative text-center">
-                {/* Step number */}
-                <div className="w-16 h-16 bg-maporte-orange rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg">
-                  <step.icon className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-lg font-jost font-semibold text-maporte-black mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-maporte-gray-medium font-roboto text-sm leading-relaxed">
-                  {step.description}
-                </p>
+        <div className="grid lg:grid-cols-4 gap-8 mb-12">
+          {steps.map((step, index) => (
+            <div key={index} className="relative text-center">
+              {/* Step icon with background circle */}
+              <div className="w-16 h-16 bg-maporte-orange rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg">
+                <step.icon className="w-8 h-8 text-white" />
               </div>
-            ))}
-          </div>
+              
+              {/* Arrow between steps (except for last step) */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-8 left-3/4 transform -translate-y-1/2 z-0">
+                  <ArrowRight className="w-6 h-6 text-maporte-orange/60" />
+                </div>
+              )}
+              
+              <h3 className="text-lg font-jost font-semibold text-maporte-black mb-3">
+                {step.title}
+              </h3>
+              <p className="text-maporte-gray-medium font-roboto text-sm leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={onShowForm}
+            className="bg-maporte-orange hover:bg-maporte-orange/90 text-white font-roboto font-medium px-8 py-4 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            Commencer mon processus
+          </button>
         </div>
       </div>
     </section>
