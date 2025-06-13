@@ -1,3 +1,4 @@
+
 interface CTAProps {
   onShowForm: () => void;
 }
@@ -8,7 +9,7 @@ export const CTA = ({
       <div className="container-maporte">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <img src="/lovable-uploads/2ffa6625-2b33-4685-8715-c8c5f072d99b.png" alt="Famille devant leur nouvelle porte Ma Porte" className="rounded-2xl shadow-2xl" />
+            <img src="/lovable-uploads/0de0e095-75b1-493b-9472-aba73837ec98.png" alt="Famille devant leur nouvelle porte Ma Porte" className="rounded-2xl shadow-2xl" />
           </div>
           
           <div className="space-y-8">
