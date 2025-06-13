@@ -15,28 +15,52 @@ export const FAQ = () => {
 
   const faqs = [
     {
-      question: 'Combien coûte une porte d\'entrée posée ?',
-      answer: 'Le prix varie de 5 000 à 15 000 CHF selon le modèle, les options de sécurité et de personnalisation choisies. Nous proposons un devis gratuit et détaillé après prise de mesures à domicile. Possibilité de paiement échelonné sans frais.'
+      question: 'Combien coûte vos portes d\'entrées ?',
+      answer: 'Nos prix démarrent à environ 5 000 CHF pour une porte basique et la pose. Les montants varient selon les options choisies (matériaux, design, sécurité). Remplissez le formulaire ci-dessous pour obtenir un devis gratuit adapté à votre projet. Vous recevrez également le lien pour accéder au configurateur de portes comprenant tous les modèles et leurs options.'
     },
     {
-      question: 'En quoi votre porte est-elle plus sûre qu\'un modèle à 1 500 CHF ?',
-      answer: 'Nos portes Inotherm intègrent un verrouillage 5 crochets, blindage RC2/RC3 certifié, rosace inox anti-perçage et options biométriques. Tests de résistance > 5 minutes contre l\'effraction, garantie d\'assurance. Sécurité éprouvée par 45 000 installations/an.'
+      question: 'C\'est trop cher !',
+      answer: 'Nous comprenons totalement que le coût peut sembler élevé à première vue, mais nos portes représentent un investissement durable. Imaginez : une porte robuste, ultra-sécurisée et parfaitement isolée qui réduit vos factures énergétiques. Les matériaux de qualité supérieure et les options de sécurité innovantes garantissent votre tranquillité tout en valorisant votre bien immobilier. De plus, nous vous accompagnons à chaque étape grâce à un service clé en main sans tracas. Votre maison mérite le meilleur, n\'est-ce pas ?'
     },
     {
-      question: 'Quels délais entre la commande et la pose ?',
-      answer: 'Délai standard de 5-7 semaines pour la fabrication sur mesure Inotherm. Installation en une journée par nos menuisiers salariés. Planning optimisé pour minimiser les délais, avec suivi personnalisé de votre commande.'
+      question: 'J\'ai vu des portes moins chères ailleurs, comment cela se fait-il ?',
+      answer: 'Certaines grandes surfaces (par ex. Hornbach) vendent effectivement des portes à prix réduit, souvent en PVC, moins robuste et moins isolant que l\'aluminium. Ces tarifs n\'incluent généralement pas la pose professionnelle, primordiale pour garantir sécurité et durabilité. Chez Ma Porte, nous proposons des portes aluminium haut de gamme, entièrement personnalisables, avec pose et support client inclus. Investir dans la qualité, c\'est investir dans la tranquillité et la longévité.'
     },
     {
-      question: 'Quelle garantie produit & installation ?',
-      answer: 'Garantie fabricant Inotherm 10 ans sur la porte, 2 ans sur les mécanismes. Garantie Ma Porte 2 ans sur la pose et les réglages. SAV local réactif avec intervention sous 48h en Suisse romande. Service de maintenance préventive disponible.'
+      question: 'Est-ce que j\'ai vraiment besoin d\'une nouvelle porte d\'entrée ?',
+      answer: 'Une porte d\'entrée est bien plus qu\'un simple accès : c\'est la première impression de votre maison, votre barrière de sécurité et un élément clé pour réduire vos factures d\'énergie grâce à une isolation moderne. Si votre porte est moins sécurisée, mal isolée ou démodée, c\'est peut-être le moment d\'investir dans une porte qui protège votre famille, embellit votre maison et augmente sa valeur.'
     },
     {
-      question: 'Puis-je vraiment tout personnaliser ?',
-      answer: 'Oui : 400 modèles de base, couleurs RAL illimitées (mates, brillantes, structurées), décors bois, types de vitrage, poignées design, éclairage LED intégré, accessoires connectés. Configurateur en ligne avec visualisation 3D temps réel.'
+      question: 'Les portes sont-elles sécurisées ?',
+      answer: 'Absolument. Nos portes comptent parmi les plus sûres du marché grâce à des fonctionnalités de pointe : Serrures multipoints avancées (jusqu\'à 5 crochets massifs et plaques anti-perçage en acier), serrures biométriques (ouverture par empreinte digitale ou code PIN), vitrage de sécurité (verres feuilletés ou blindés), matériaux ultra-résistants (aluminium conçu pour résister aux intempéries et effractions), normes certifiées RC2/RC3, et charnières renforcées anti-dégondage. Avec nos portes, vous protégez ce qui compte le plus : votre famille et votre tranquillité d\'esprit.'
     },
     {
-      question: 'Comment se passe le SAV ?',
-      answer: 'Numéro direct Ma Porte, intervention sous 48h en Suisse romande. Menuisiers salariés formés Inotherm (pas de sous-traitance). Stock de pièces détachées garanti 10 ans. Contrats de maintenance préventive pour les copropriétés et professionnels.'
+      question: 'Combien de temps prend l\'installation d\'une porte d\'entrée ?',
+      answer: 'En général, une journée suffit. Nous retirons l\'ancienne porte, préparons l\'ouverture et posons la nouvelle avec toutes les finitions, en minimisant les interruptions pour que vous profitiez de votre porte le jour même.'
+    },
+    {
+      question: 'Quel est le délai pour recevoir ma porte ?',
+      answer: 'Selon la personnalisation, comptez 6 à 8 semaines après validation de la commande (conception, fabrication, logistique). Nous vous tenons informé à chaque étape.'
+    },
+    {
+      question: 'Puis-je personnaliser ma porte ?',
+      answer: 'Bien sûr ! Plus de 400 modèles de base, des centaines de couleurs, finitions, poignées, vitrages décoratifs, serrures biométriques… Chaque porte est conçue sur mesure. Avec notre configurateur en ligne, créer votre porte unique n\'a jamais été aussi simple ; nous vous envoyons le lien après le formulaire.'
+    },
+    {
+      question: 'Comment voir les différents modèles de portes ?',
+      answer: 'Utilisez notre configurateur en ligne pour visualiser designs, couleurs et options. Remplissez le formulaire et recevez le lien par e-mail. Besoin d\'inspiration supplémentaire ? Contactez-nous et nous vous enverrons des photos de réalisations.'
+    },
+    {
+      question: 'Offrez-vous une garantie ?',
+      answer: 'Oui, une garantie complète couvre défauts de fabrication, installation et durabilité des matériaux. Vous profitez d\'une porte haut de gamme et d\'un SAV réactif. Avec Ma Porte, vous êtes entre de bonnes mains.'
+    },
+    {
+      question: 'Comment puis-je être sûr que votre entreprise est fiable ?',
+      answer: 'Nous sommes partenaire agréé d\'Inotherm, marque européenne renommée pour ses portes haut de gamme. Des centaines de clients satisfaits témoignent de notre expertise. Nous fournissons avis, exemples et photos sur demande ; notre service personnalisé et notre exigence de qualité font la différence.'
+    },
+    {
+      question: 'Quelle est la durée de vie de vos portes ?',
+      answer: 'Nos portes aluminium haut de gamme sont conçues pour durer des décennies : matériaux premium, finitions résistantes aux intempéries, entretien minimal. En partenariat avec Inotherm, nous vous offrons une porte qui protège et embellit votre maison pendant de très longues années.'
     }
   ];
 
