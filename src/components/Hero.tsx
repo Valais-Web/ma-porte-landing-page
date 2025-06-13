@@ -71,7 +71,7 @@ export const Hero = ({
 
             {/* CTA Button */}
             <div className="pt-4">
-              <button onClick={onShowForm} className="btn-primary text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200">Obtenir mon devis gratuit et personnalisé</button>
+              <button onClick={onShowForm} className="btn-primary text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200 font-medium rounded-lg">Obtenir mon devis gratuit et personnalisé</button>
             </div>
           </div>
 
