@@ -1,5 +1,4 @@
-
-import { Shield, Thermometer, Brush, Clock } from 'lucide-react';
+import { Shield, Thermometer, Brush, Clock, Star } from 'lucide-react';
 interface HeroProps {
   onShowForm: () => void;
 }
@@ -86,9 +85,9 @@ export const Hero = ({
             {/* Floating badge */}
             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-maporte-orange/20">
               <div className="text-center">
-                <div className="flex flex-col items-center space-y-2">
-                  <img src="/lovable-uploads/c1efd4aa-1a22-4d29-acb2-35a6f8157774.png" alt="Google Logo" className="w-8 h-8" />
+                <div className="flex items-center justify-center space-x-1">
                   <span className="text-2xl font-jost font-semibold text-maporte-orange">5/5</span>
+                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                 </div>
                 <div className="text-sm text-maporte-gray-medium font-roboto">39 avis Google</div>
               </div>
