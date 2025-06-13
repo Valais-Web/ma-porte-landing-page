@@ -100,9 +100,9 @@ export const WhyMaPorte = () => {
           </div>
           
           {/* Responsive Grid Layout */}
-          <div className="grid grid-cols-4 gap-4 lg:gap-6 h-80">
-            {/* Main horizontal image - spans 2 columns on all screens */}
-            <div className="col-span-2 h-full">
+          <div className="grid grid-cols-4 gap-4 lg:gap-6 h-auto lg:h-80">
+            {/* Main horizontal image - spans full width on mobile, 2 columns on desktop */}
+            <div className="col-span-4 lg:col-span-2 h-60 lg:h-full">
               <div className="relative rounded-xl overflow-hidden shadow-lg group h-full bg-white">
                 <img 
                   src="/lovable-uploads/af4ed72f-85b6-43f6-9e20-91ea365ef202.png"
@@ -113,8 +113,8 @@ export const WhyMaPorte = () => {
               </div>
             </div>
             
-            {/* Two vertical images - each spans 1 column */}
-            <div className="col-span-1 h-full">
+            {/* Two vertical images - side by side on mobile, stacked vertically on desktop */}
+            <div className="col-span-2 lg:col-span-1 h-60 lg:h-full">
               <div className="relative rounded-xl overflow-hidden shadow-lg group h-full bg-white">
                 <img 
                   src="/lovable-uploads/b5a981f1-e680-4880-aeb5-f013784c0e8f.png"
@@ -125,7 +125,7 @@ export const WhyMaPorte = () => {
               </div>
             </div>
             
-            <div className="col-span-1 h-full">
+            <div className="col-span-2 lg:col-span-1 h-60 lg:h-full">
               <div className="relative rounded-xl overflow-hidden shadow-lg group h-full bg-white">
                 <img 
                   src="/lovable-uploads/d07d2b35-e369-415e-a0de-49498b143fe0.png"
