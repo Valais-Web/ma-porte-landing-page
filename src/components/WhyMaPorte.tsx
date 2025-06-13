@@ -44,7 +44,7 @@ export const WhyMaPorte = () => {
         </div>
 
         {/* Desktop Grid - 5 columns */}
-        <div className="hidden lg:grid lg:grid-cols-5 gap-8">
+        <div className="hidden lg:grid lg:grid-cols-5 gap-8 mb-16">
           {pillars.map((pillar, index) => (
             <div 
               key={index}
@@ -64,7 +64,7 @@ export const WhyMaPorte = () => {
         </div>
 
         {/* Mobile Slider */}
-        <div className="lg:hidden">
+        <div className="lg:hidden mb-16">
           <Carousel className="w-full">
             <CarouselContent>
               {pillars.map((pillar, index) => (
@@ -86,6 +86,53 @@ export const WhyMaPorte = () => {
             <CarouselPrevious className="left-4" />
             <CarouselNext className="right-4" />
           </Carousel>
+        </div>
+
+        {/* Team Images Section */}
+        <div className="bg-maporte-gray-light rounded-2xl p-8 lg:p-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl lg:text-3xl font-jost font-medium text-maporte-black mb-3">
+              Nos équipes à l'œuvre
+            </h3>
+            <p className="text-lg text-maporte-gray-medium font-roboto">
+              Professionnalisme et expertise technique au service de votre projet
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* Main image - larger on desktop */}
+            <div className="lg:col-span-2">
+              <div className="relative rounded-xl overflow-hidden shadow-lg group">
+                <img 
+                  src="/lovable-uploads/af4ed72f-85b6-43f6-9e20-91ea365ef202.png"
+                  alt="Équipe Ma Porte installant une porte d'entrée avec précision et professionnalisme"
+                  className="w-full h-64 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/20 to-transparent"></div>
+              </div>
+            </div>
+            
+            {/* Secondary images - stacked on desktop */}
+            <div className="space-y-6">
+              <div className="relative rounded-xl overflow-hidden shadow-lg group">
+                <img 
+                  src="/lovable-uploads/b5a981f1-e680-4880-aeb5-f013784c0e8f.png"
+                  alt="Technicien Ma Porte effectuant des mesures précises lors de l'installation"
+                  className="w-full h-28 lg:h-36 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/20 to-transparent"></div>
+              </div>
+              
+              <div className="relative rounded-xl overflow-hidden shadow-lg group">
+                <img 
+                  src="/lovable-uploads/d07d2b35-e369-415e-a0de-49498b143fe0.png"
+                  alt="Expert Ma Porte vérifiant les détails techniques d'une installation de porte"
+                  className="w-full h-28 lg:h-36 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/20 to-transparent"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
