@@ -1,4 +1,5 @@
-import { Shield, Thermometer, Brush, Clock, Star } from 'lucide-react';
+
+import { Shield, Thermometer, Brush, Clock } from 'lucide-react';
 interface HeroProps {
   onShowForm: () => void;
 }
@@ -82,14 +83,11 @@ export const Hero = ({
               <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/20 to-transparent"></div>
             </div>
             
-            {/* Floating badge */}
+            {/* Floating badge with Google logo */}
             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-maporte-orange/20">
               <div className="text-center">
-                <div className="flex items-center justify-center space-x-1">
-                  <span className="text-2xl font-jost font-semibold text-maporte-orange">5/5</span>
-                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                </div>
-                <div className="text-sm text-maporte-gray-medium font-roboto">39 avis Google</div>
+                <img src="/lovable-uploads/dc54512d-92e7-42a8-9aad-800c2e70c768.png" alt="Google 5.0 étoiles" className="w-auto h-12 mx-auto" />
+                <div className="text-sm text-maporte-gray-medium font-roboto mt-1">39 avis Google</div>
               </div>
             </div>
           </div>
