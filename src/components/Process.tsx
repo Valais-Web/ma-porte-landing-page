@@ -44,7 +44,7 @@ export const Process = ({ onShowForm }: ProcessProps) => {
 
         <div className="grid lg:grid-cols-4 gap-8 mb-12">
           {steps.map((step, index) => (
-            <div key={index} className="relative text-center">
+            <div key={index} className="relative text-center flex flex-col items-center">
               {/* Step icon with background circle */}
               <div className="w-16 h-16 bg-maporte-orange rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg">
                 <step.icon className="w-8 h-8 text-white" />
@@ -57,12 +57,14 @@ export const Process = ({ onShowForm }: ProcessProps) => {
                 </div>
               )}
               
-              <h3 className="text-lg font-jost font-semibold text-maporte-black mb-3">
-                {step.title}
-              </h3>
-              <p className="text-maporte-gray-medium font-roboto text-sm leading-relaxed">
-                {step.description}
-              </p>
+              <div className="flex flex-col items-center flex-1">
+                <h3 className="text-lg font-jost font-semibold text-maporte-black mb-3 min-h-[3.5rem] flex items-start justify-center text-center">
+                  {step.title}
+                </h3>
+                <p className="text-maporte-gray-medium font-roboto text-sm leading-relaxed text-center">
+                  {step.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
