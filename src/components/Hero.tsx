@@ -1,5 +1,4 @@
-
-import { Shield, Thermometer, Brush, Clock } from 'lucide-react';
+import { Shield, Thermometer, Brush, Clock, Star } from 'lucide-react';
 interface HeroProps {
   onShowForm: () => void;
 }
@@ -88,7 +87,7 @@ export const Hero = ({
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-1">
                   <span className="text-2xl font-jost font-semibold text-maporte-orange">5/5</span>
-                  <img src="/lovable-uploads/f8673fb7-bf58-4aa1-8f76-02534fb85147.png" alt="Google logo" className="w-5 h-5" />
+                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                 </div>
                 <div className="text-sm text-maporte-gray-medium font-roboto">39 avis Google</div>
               </div>
