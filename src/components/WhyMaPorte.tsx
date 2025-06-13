@@ -107,7 +107,7 @@ export const WhyMaPorte = () => {
                 <img 
                   src="/lovable-uploads/af4ed72f-85b6-43f6-9e20-91ea365ef202.png"
                   alt="Équipe Ma Porte installant une porte d'entrée avec précision et professionnalisme"
-                  className="w-full h-64 lg:h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-64 lg:h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/10 to-transparent pointer-events-none"></div>
               </div>
