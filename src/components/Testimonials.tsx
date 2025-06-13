@@ -105,11 +105,11 @@ export const Testimonials = () => {
                   }`}
                 >
                   {/* Image de la porte */}
-                  <div className="h-48 overflow-hidden rounded-t-2xl">
+                  <div className="h-56 overflow-hidden rounded-t-2xl flex justify-center items-center bg-gray-50">
                     <img 
                       src={testimonial.image} 
                       alt={`Porte installée chez ${testimonial.name}`}
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full object-contain"
                     />
                   </div>
                   
