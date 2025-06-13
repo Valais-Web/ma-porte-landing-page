@@ -70,11 +70,11 @@ export const Testimonials = () => {
     }
   ];
 
-  // Auto-scroll every 4 seconds
+  // Auto-scroll every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
@@ -99,7 +99,8 @@ export const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        {/* Desktop view - 3 cards */}
+        <div className="hidden md:block relative max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
             {[0, 1, 2].map((offset) => {
               const index = (currentIndex + offset) % testimonials.length;
@@ -161,6 +162,72 @@ export const Testimonials = () => {
             className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-maporte-orange hover:text-white transition-colors"
           >
             <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Mobile view - single card with horizontal scroll */}
+        <div className="md:hidden relative max-w-sm mx-auto">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={index}
+                  className="w-full flex-shrink-0 px-2"
+                >
+                  <div className="bg-white rounded-2xl shadow-lg h-[600px] flex flex-col">
+                    {/* Image de la porte - format plus vertical */}
+                    <div className="h-72 overflow-hidden rounded-t-2xl">
+                      <img 
+                        src={testimonial.image} 
+                        alt={`Porte installée chez ${testimonial.name}`}
+                        className="w-full h-full object-cover object-center"
+                        style={{ objectPosition: 'center' }}
+                      />
+                    </div>
+                    
+                    {/* Contenu de l'avis */}
+                    <div className="p-4 flex flex-col flex-1">
+                      <div className="flex items-center mb-3">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                      
+                      <p className="text-maporte-black font-roboto mb-4 italic text-sm leading-relaxed flex-1 overflow-hidden">
+                        "{testimonial.text}"
+                      </p>
+                      
+                      <div className="border-t pt-3 mt-auto">
+                        <p className="font-jost font-semibold text-maporte-black text-sm">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-maporte-gray-medium text-xs">
+                          {testimonial.location}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile navigation */}
+          <button
+            onClick={prevTestimonial}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-maporte-orange hover:text-white transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          
+          <button
+            onClick={nextTestimonial}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-maporte-orange hover:text-white transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
           </button>
         </div>
 

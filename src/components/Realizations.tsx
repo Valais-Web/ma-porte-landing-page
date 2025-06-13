@@ -9,6 +9,7 @@ export const Realizations = ({
   onShowForm
 }: RealizationsProps) => {
   const [api, setApi] = useState<any>();
+  const [mobileApi, setMobileApi] = useState<any>();
 
   const realizations = [
     {
@@ -64,16 +65,27 @@ export const Realizations = ({
     }
   ];
 
-  // Auto-scroll every 5 seconds for gallery
+  // Auto-scroll every 7 seconds for desktop gallery
   useEffect(() => {
     if (!api) return;
 
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [api]);
+
+  // Auto-scroll every 5 seconds for mobile gallery
+  useEffect(() => {
+    if (!mobileApi) return;
+
+    const interval = setInterval(() => {
+      mobileApi.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [mobileApi]);
 
   return (
     <section className="py-20 bg-gradient-to-br from-maporte-beige to-white overflow-hidden">
@@ -139,9 +151,16 @@ export const Realizations = ({
           </Carousel>
         </div>
 
-        {/* Mobile & Tablet: Horizontal Scroll Carousel */}
+        {/* Mobile & Tablet: Horizontal Scroll Carousel with auto-scroll */}
         <div className="lg:hidden mb-20">
-          <Carousel className="w-full">
+          <Carousel 
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true
+            }}
+            setApi={setMobileApi}
+          >
             <CarouselContent className="-ml-4">
               {realizations.map((realization, index) => (
                 <CarouselItem key={index} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3">
