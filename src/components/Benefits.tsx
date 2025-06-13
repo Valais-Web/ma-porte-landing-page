@@ -1,5 +1,5 @@
 
-import { Home, Shield, Palette, DollarSign, MapPin, TrendingUp } from 'lucide-react';
+import { Thermometer, Shield, Palette, DollarSign, MapPin, TrendingUp } from 'lucide-react';
 
 interface BenefitsProps {
   onShowForm?: () => void;
@@ -8,7 +8,7 @@ interface BenefitsProps {
 export const Benefits = ({ onShowForm }: BenefitsProps) => {
   const benefits = [
     {
-      icon: Home,
+      icon: Thermometer,
       title: 'Isolation & économies d\'énergie',
       description: 'Panneau alu isolé + triple vitrage : coefficient Uw jusqu\'à 0,65 W/m²K et forte atténuation du bruit extérieur — plus de courants d\'air ni de vacarme de rue'
     },
