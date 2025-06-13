@@ -1,4 +1,3 @@
-
 import { Shield, Thermometer, Brush, Clock, Star } from 'lucide-react';
 interface HeroProps {
   onShowForm: () => void;
@@ -23,7 +22,9 @@ export const Hero = ({
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-jost font-semibold text-maporte-black leading-relaxed" style={{ lineHeight: '1.1' }}>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-jost font-semibold text-maporte-black leading-relaxed" style={{
+              lineHeight: '1.1'
+            }}>
                 La porte d'entrée sur mesure qui{' '}
                 <span className="text-maporte-orange">sécurise</span>,{' '}
                 <span className="text-maporte-orange">isole</span> et{' '}
@@ -70,9 +71,7 @@ export const Hero = ({
 
             {/* CTA Button */}
             <div className="pt-4">
-              <button onClick={onShowForm} className="btn-primary text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200">
-                Commencer mon devis personnalisé
-              </button>
+              <button onClick={onShowForm} className="btn-primary text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200">Obtenir mon devis gratuit et personnalisé</button>
             </div>
           </div>
 
