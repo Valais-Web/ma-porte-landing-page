@@ -1,7 +1,11 @@
 
 import { Home, Shield, Palette, DollarSign, MapPin, TrendingUp } from 'lucide-react';
 
-export const Benefits = () => {
+interface BenefitsProps {
+  onShowForm?: () => void;
+}
+
+export const Benefits = ({ onShowForm }: BenefitsProps) => {
   const benefits = [
     {
       icon: Home,
@@ -40,21 +44,23 @@ export const Benefits = () => {
       <div className="container-maporte">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-jost font-semibold text-maporte-black mb-4">
-            Les bénéfices d'une porte Ma Porte
+            Les bénéfices qui comptent pour VOUS
           </h2>
           <p className="text-xl text-maporte-gray-medium font-roboto max-w-2xl mx-auto">
-            Découvrez tous les avantages d'investir dans une porte d'entrée de qualité suisse
+            Au-delà d'une simple porte, un investissement durable
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="flex items-center mb-6">
-                <benefit.icon className="w-8 h-8 text-maporte-orange mr-4" strokeWidth={1.5} />
+              <div className="flex flex-col items-center text-center mb-6">
+                <div className="w-16 h-16 bg-maporte-orange/10 rounded-full flex items-center justify-center mb-4">
+                  <benefit.icon className="w-8 h-8 text-maporte-orange" strokeWidth={1.5} />
+                </div>
                 <h4 className="text-xl font-jost font-medium text-maporte-black">
                   {benefit.title}
                 </h4>
@@ -64,6 +70,15 @@ export const Benefits = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={onShowForm}
+            className="bg-maporte-orange hover:bg-maporte-orange/90 text-white font-roboto font-medium px-8 py-4 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            Prêt à investir dans votre porte ?
+          </button>
         </div>
       </div>
     </section>
