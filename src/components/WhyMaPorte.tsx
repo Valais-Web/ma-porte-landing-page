@@ -6,8 +6,8 @@ export const WhyMaPorte = () => {
   const pillars = [
     {
       icon: Award,
-      title: '20 ans d\'expertise 100 % portes d\'entrée',
-      description: 'Vous profitez d\'un savoir-faire ultra-spécialisé : nos équipes ne font que ça, et ça se voit dans le résultat.'
+      title: 'Expertise 100 % portes d\'entrée',
+      description: 'Vous profitez d\'un savoir-faire ultra-spécialisé : Depuis plus de 20 ans, nos équipes ne font que ça, et ça se voit dans le résultat.'
     },
     {
       icon: HandHeart,
@@ -16,8 +16,8 @@ export const WhyMaPorte = () => {
     },
     {
       icon: Shield,
-      title: 'Garantie tranquillité 10 ans & SAV 48 h',
-      description: 'Votre investissement est protégé ; en cas de souci, un technicien intervient sous deux jours ouvrés max.'
+      title: 'Garantie tranquillité & SAV réactif',
+      description: 'Votre investissement est protégé ; en cas de besoin, notre équipe technique intervient rapidement.'
     },
     {
       icon: FileText,
@@ -26,8 +26,8 @@ export const WhyMaPorte = () => {
     },
     {
       icon: MapPin,
-      title: 'Entreprise locale au service des Romands',
-      description: 'Société familiale vaudoise, proche de chez vous : soutien à l\'économie locale et réactivité terrain garantie.'
+      title: 'Entreprise locale',
+      description: 'Société familiale vaudoise, proche de chez vous : soutien à l\'économie régionale et intervention rapide.'
     }
   ];
 
