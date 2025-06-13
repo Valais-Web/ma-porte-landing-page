@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				maporte: {
+					orange: '#f58026',
+					black: '#1b1b1b',
+					white: '#ffffff',
+					'gray-light': '#f4f4f4',
+					'gray-medium': '#8b8b8b',
+					beige: '#f9f7f6'
 				}
+			},
+			fontFamily: {
+				'jost': ['Jost', 'sans-serif'],
+				'roboto': ['Roboto', 'sans-serif'],
+			},
+			letterSpacing: {
+				'wider-2': '0.02em',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
