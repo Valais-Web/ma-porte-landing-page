@@ -1,4 +1,5 @@
 
+
 import { Search, Ruler, Cog, CheckCircle, ArrowRight } from 'lucide-react';
 
 interface ProcessProps {
@@ -9,7 +10,7 @@ export const Process = ({ onShowForm }: ProcessProps) => {
   const steps = [
     {
       icon: Search,
-      title: 'Config. en ligne / appel expert',
+      title: 'Configuration en ligne / appel expert',
       description: 'Choisissez votre modèle et personnalisez-le selon vos goûts'
     },
     {
@@ -71,10 +72,11 @@ export const Process = ({ onShowForm }: ProcessProps) => {
             onClick={onShowForm}
             className="bg-maporte-orange hover:bg-maporte-orange/90 text-white font-roboto font-medium px-8 py-4 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
-            Commencer mon processus
+            Obtenir mon devis gratuit et personnalisé
           </button>
         </div>
       </div>
     </section>
   );
 };
+
