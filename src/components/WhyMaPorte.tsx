@@ -1,4 +1,3 @@
-
 import { Award, HandHeart, Shield, FileText, MapPin } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 
@@ -102,34 +101,34 @@ export const WhyMaPorte = () => {
           <div className="grid lg:grid-cols-3 gap-6">
             {/* Main image - larger on desktop */}
             <div className="lg:col-span-2">
-              <div className="relative rounded-xl overflow-hidden shadow-lg group">
+              <div className="relative rounded-xl overflow-hidden shadow-lg group bg-white">
                 <img 
                   src="/lovable-uploads/af4ed72f-85b6-43f6-9e20-91ea365ef202.png"
                   alt="Équipe Ma Porte installant une porte d'entrée avec précision et professionnalisme"
-                  className="w-full h-64 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-64 lg:h-80 object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/10 to-transparent"></div>
               </div>
             </div>
             
             {/* Secondary images - stacked on desktop */}
             <div className="space-y-6">
-              <div className="relative rounded-xl overflow-hidden shadow-lg group">
+              <div className="relative rounded-xl overflow-hidden shadow-lg group bg-white">
                 <img 
                   src="/lovable-uploads/b5a981f1-e680-4880-aeb5-f013784c0e8f.png"
                   alt="Technicien Ma Porte effectuant des mesures précises lors de l'installation"
-                  className="w-full h-28 lg:h-36 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-32 lg:h-40 object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/10 to-transparent"></div>
               </div>
               
-              <div className="relative rounded-xl overflow-hidden shadow-lg group">
+              <div className="relative rounded-xl overflow-hidden shadow-lg group bg-white">
                 <img 
                   src="/lovable-uploads/d07d2b35-e369-415e-a0de-49498b143fe0.png"
                   alt="Expert Ma Porte vérifiant les détails techniques d'une installation de porte"
-                  className="w-full h-28 lg:h-36 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-32 lg:h-40 object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/10 to-transparent"></div>
               </div>
             </div>
           </div>
