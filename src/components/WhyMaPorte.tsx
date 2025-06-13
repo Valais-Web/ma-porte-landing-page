@@ -100,37 +100,37 @@ export const WhyMaPorte = () => {
           </div>
           
           {/* Responsive Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6">
-            {/* Main horizontal image - spans 2 columns on large screens */}
-            <div className="lg:col-span-2 lg:row-span-2">
+          <div className="grid grid-cols-4 gap-4 lg:gap-6 h-80">
+            {/* Main horizontal image - spans 2 columns on all screens */}
+            <div className="col-span-2 h-full">
               <div className="relative rounded-xl overflow-hidden shadow-lg group h-full bg-white">
                 <img 
                   src="/lovable-uploads/af4ed72f-85b6-43f6-9e20-91ea365ef202.png"
                   alt="Équipe Ma Porte installant une porte d'entrée avec précision et professionnalisme"
-                  className="w-full h-64 lg:h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/10 to-transparent pointer-events-none"></div>
               </div>
             </div>
             
             {/* Two vertical images - each spans 1 column */}
-            <div className="lg:col-span-1">
+            <div className="col-span-1 h-full">
               <div className="relative rounded-xl overflow-hidden shadow-lg group h-full bg-white">
                 <img 
                   src="/lovable-uploads/b5a981f1-e680-4880-aeb5-f013784c0e8f.png"
                   alt="Technicien Ma Porte effectuant des mesures précises lors de l'installation"
-                  className="w-full h-64 lg:h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/10 to-transparent pointer-events-none"></div>
               </div>
             </div>
             
-            <div className="lg:col-span-1">
+            <div className="col-span-1 h-full">
               <div className="relative rounded-xl overflow-hidden shadow-lg group h-full bg-white">
                 <img 
                   src="/lovable-uploads/d07d2b35-e369-415e-a0de-49498b143fe0.png"
                   alt="Expert Ma Porte vérifiant les détails techniques d'une installation de porte"
-                  className="w-full h-64 lg:h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/10 to-transparent pointer-events-none"></div>
               </div>
