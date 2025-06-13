@@ -1,3 +1,4 @@
+
 import { Shield, Thermometer, Brush, Clock } from 'lucide-react';
 interface HeroProps {
   onShowForm: () => void;
