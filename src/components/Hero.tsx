@@ -1,5 +1,3 @@
-
-
 import { Shield, Thermometer, Brush, Clock } from 'lucide-react';
 interface HeroProps {
   onShowForm: () => void;
@@ -73,7 +71,7 @@ export const Hero = ({
 
             {/* CTA Button */}
             <div className="pt-4">
-              <button onClick={onShowForm} className="btn-primary text-lg px-12 py-6 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200 font-medium rounded-lg">Obtenir mon devis gratuit et personnalisé</button>
+              <button onClick={onShowForm} className="btn-primary text-lg px-12 py-8 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200 font-medium rounded-lg">Obtenir mon devis gratuit et personnalisé</button>
             </div>
           </div>
 
@@ -96,4 +94,3 @@ export const Hero = ({
       </div>
     </section>;
 };
-

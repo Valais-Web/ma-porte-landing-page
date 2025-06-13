@@ -58,7 +58,7 @@ export const Benefits = ({
         </div>
 
         <div className="text-center">
-          <button onClick={onShowForm} className="bg-maporte-orange hover:bg-maporte-orange/90 text-white font-roboto font-medium px-8 py-4 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl">Obtenir mon devis gratuit et personnalisé</button>
+          <button onClick={onShowForm} className="bg-maporte-orange hover:bg-maporte-orange/90 text-white font-roboto font-medium px-8 py-6 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl">Obtenir mon devis gratuit et personnalisé</button>
         </div>
       </div>
     </section>;
