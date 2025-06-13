@@ -1,22 +1,33 @@
 
-import { Target, Award, Wrench } from 'lucide-react';
+import { Award, HandHeart, Shield, FileText, MapPin } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 
 export const WhyMaPorte = () => {
-  const reasons = [
-    {
-      icon: Target,
-      title: 'Spécialiste portes d\'entrée, rien d\'autre',
-      description: 'Focus 100% sur la porte aluminium haut de gamme depuis 20 ans.'
-    },
+  const pillars = [
     {
       icon: Award,
-      title: 'Fabrication Inotherm #1 européen',
-      description: '95 mm monobloc, vitrage triple, plus de 400 modèles entièrement configurables.'
+      title: '20 ans d\'expertise 100 % portes d\'entrée',
+      description: 'Vous profitez d\'un savoir-faire ultra-spécialisé : nos équipes ne font que ça, et ça se voit dans le résultat.'
     },
     {
-      icon: Wrench,
-      title: 'Service local « zéro souci »',
-      description: 'Prise de mesures à domicile, pose en 1 jour, SAV réactif en Suisse romande – garanti.'
+      icon: HandHeart,
+      title: 'Accompagnement clé en main',
+      description: 'Du premier appel au SAV, tout est géré par nos équipes internes : un interlocuteur unique, pas de surprises.'
+    },
+    {
+      icon: Shield,
+      title: 'Garantie tranquillité 10 ans & SAV 48 h',
+      description: 'Votre investissement est protégé ; en cas de souci, un technicien intervient sous deux jours ouvrés max.'
+    },
+    {
+      icon: FileText,
+      title: 'Devis clair & conseils neutres',
+      description: 'Pas de jargon, pas de pression : nous bâtissons l\'offre autour de vos priorités, et vous décidez en toute confiance.'
+    },
+    {
+      icon: MapPin,
+      title: 'Entreprise locale au service des Romands',
+      description: 'Société familiale vaudoise, proche de chez vous : soutien à l\'économie locale et réactivité terrain garantie.'
     }
   ];
 
@@ -32,23 +43,49 @@ export const WhyMaPorte = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => (
+        {/* Desktop Grid - 5 columns */}
+        <div className="hidden lg:grid lg:grid-cols-5 gap-8">
+          {pillars.map((pillar, index) => (
             <div 
               key={index}
               className="text-center group hover:transform hover:scale-105 transition-all duration-300"
             >
-              <div className="w-16 h-16 bg-maporte-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-maporte-orange/20 transition-colors">
-                <reason.icon className="w-8 h-8 text-maporte-orange" />
+              <div className="flex items-center justify-center mb-6">
+                <pillar.icon className="w-8 h-8 text-maporte-orange" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-jost font-semibold text-maporte-black mb-4">
-                {reason.title}
+              <h3 className="text-2xl font-jost font-medium text-maporte-black mb-4 leading-tight">
+                {pillar.title}
               </h3>
-              <p className="text-maporte-gray-medium font-roboto leading-relaxed">
-                {reason.description}
+              <p className="text-base text-maporte-gray-medium font-roboto leading-relaxed">
+                {pillar.description}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Slider */}
+        <div className="lg:hidden">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {pillars.map((pillar, index) => (
+                <CarouselItem key={index} className="basis-full">
+                  <div className="text-center p-6">
+                    <div className="flex items-center justify-center mb-6">
+                      <pillar.icon className="w-8 h-8 text-maporte-orange" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-2xl font-jost font-medium text-maporte-black mb-4 leading-tight">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-base text-maporte-gray-medium font-roboto leading-relaxed max-w-md mx-auto">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
       </div>
     </section>
