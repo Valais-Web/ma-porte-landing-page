@@ -2,127 +2,179 @@
 export const Realizations = () => {
   const realizations = [
     {
-      image: '/lovable-uploads/d0f738fb-f5fe-427e-8201-099467fa5495.png',
-      title: 'Porte moderne avec vitrage',
-      location: 'Villa contemporaine',
-      benefit: 'luminosité maximale'
+      image: '/lovable-uploads/c9440a32-39ed-48d2-992b-d622001fd03b.png',
+      title: 'Design contemporain bois & verre',
+      category: 'Villa moderne',
+      description: 'Une entrée sculpturale qui joue avec les matières naturelles'
     },
     {
-      image: '/lovable-uploads/bafdd4c1-6816-4a0d-a8ac-f4bfc40e744d.png',
-      title: 'Design épuré bois & verre',
-      location: 'Architecture minimaliste',
-      benefit: 'élégance naturelle'
+      image: '/lovable-uploads/a8e654c5-a033-456a-ac3c-f84a88fa46b3.png',
+      title: 'Élégance minimaliste',
+      category: 'Architecture contemporaine',
+      description: 'Des lignes pures pour une esthétique intemporelle'
     },
     {
-      image: '/lovable-uploads/31eb447e-8270-4366-b04f-44102ffefde0.png',
-      title: 'Entrée sécurisée RC3',
-      location: 'Résidence familiale',
-      benefit: 'sécurité optimale'
+      image: '/lovable-uploads/c0e010d8-9a98-400d-9001-b6b4b1940b8f.png',
+      title: 'Combinaison bois-métal',
+      category: 'Maison familiale',
+      description: 'Le parfait équilibre entre chaleur et modernité'
     },
     {
-      image: '/lovable-uploads/e0494269-4ecf-4f99-8c5c-743685a3c7ab.png',
-      title: 'Style contemporain',
-      location: 'Maison individuelle',
-      benefit: 'design moderne'
+      image: '/lovable-uploads/10dcd534-4ac0-4105-b985-757beb098760.png',
+      title: 'Sophistication urbaine',
+      category: 'Résidence premium',
+      description: 'Une porte qui affirme le caractère de votre habitat'
     },
     {
-      image: '/lovable-uploads/43645dd8-d0f2-43f8-b6ad-177e8699607c.png',
-      title: 'Combinaison bois-aluminium',
-      location: 'Villa de prestige',
-      benefit: 'finition premium'
+      image: '/lovable-uploads/b8725872-63dd-49d0-8770-fd540ead1f46.png',
+      title: 'Pureté architecturale',
+      category: 'Villa contemporaine',
+      description: 'L\'art de sublimer l\'entrée par la simplicité'
     },
     {
-      image: '/lovable-uploads/5d5ada98-e840-48ea-b7ac-6116a514abfa.png',
-      title: 'Design classique revisité',
-      location: 'Rénovation haut de gamme',
-      benefit: 'charme intemporel'
+      image: '/lovable-uploads/3257b4c9-3c16-48ab-962e-5ab35c690a91.png',
+      title: 'Raffinement moderne',
+      category: 'Maison de prestige',
+      description: 'Des détails soignés pour une première impression parfaite'
+    },
+    {
+      image: '/lovable-uploads/6424b3a7-06c7-4b51-a49b-3dacd61ad348.png',
+      title: 'Distinction classique',
+      category: 'Architecture traditionnelle',
+      description: 'L\'élégance qui traverse les époques'
+    },
+    {
+      image: '/lovable-uploads/38be85ef-9815-40d9-9261-c90032b4ea4c.png',
+      title: 'Harmonie des matières',
+      category: 'Style authentique',
+      description: 'Quand la pierre dialogue avec le verre'
+    },
+    {
+      image: '/lovable-uploads/23522c80-6978-4a51-a5a0-fdf3b3152a57.png',
+      title: 'Grandeur naturelle',
+      category: 'Villa d\'exception',
+      description: 'Une entrée majestueuse aux proportions parfaites'
+    },
+    {
+      image: '/lovable-uploads/bdded88f-7c92-4aaf-a5b6-de1f9338483e.png',
+      title: 'Innovation architecturale',
+      category: 'Design avant-gardiste',
+      description: 'L\'audace au service de l\'esthétique'
     }
   ];
 
   return (
-    <section className="py-20 bg-maporte-beige overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-maporte-beige to-white overflow-hidden">
       <div className="container-maporte">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl lg:text-4xl font-jost font-semibold text-maporte-black mb-4">
-            Inspirez-vous : nos plus belles réalisations
+        {/* Header with enhanced typography */}
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-maporte-orange/10 rounded-full mb-6">
+            <div className="w-8 h-8 border-2 border-maporte-orange rounded-full animate-pulse"></div>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-jost font-semibold text-maporte-black mb-6 tracking-tight">
+            Inspirez-vous
           </h2>
-          <p className="text-xl text-maporte-gray-medium font-roboto max-w-2xl mx-auto">
-            Découvrez l'excellence Ma Porte à travers ces créations uniques qui transforment chaque entrée en signature architecturale
+          <p className="text-xl text-maporte-gray-medium font-roboto max-w-3xl mx-auto leading-relaxed">
+            Découvrez notre galerie d'exception : des portes d'entrée qui redéfinissent l'art de l'accueil
           </p>
         </div>
 
-        {/* Masonry-style grid for visual impact */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Masonry Grid avec animations staggerées */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {realizations.map((realization, index) => (
-            <div 
+            <div
               key={index}
               className={`
-                bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl 
-                transition-all duration-500 group cursor-pointer
-                animate-fade-in hover:scale-[1.02] transform-gpu
-                ${index % 3 === 0 ? 'lg:row-span-2' : ''}
-                ${index === 1 ? 'md:translate-y-8' : ''}
-                ${index === 4 ? 'lg:translate-y-12' : ''}
+                group cursor-pointer animate-fade-in transform-gpu
+                ${index % 4 === 0 ? 'xl:row-span-2' : ''}
+                ${index % 3 === 1 ? 'md:translate-y-12' : ''}
+                ${index % 4 === 2 ? 'xl:translate-y-16' : ''}
               `}
               style={{
-                animationDelay: `${index * 150}ms`
+                animationDelay: `${index * 100}ms`
               }}
             >
-              <div className="relative overflow-hidden">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img 
-                    src={realization.image}
-                    alt={`${realization.title} - ${realization.location}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                  />
-                </div>
-                
-                {/* Elegant overlay with gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/80 via-maporte-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Floating content on hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                  <h3 className="text-xl font-jost font-semibold mb-2">
-                    {realization.title}
-                  </h3>
-                  <p className="text-white/90 font-roboto text-sm mb-3">
-                    {realization.location}
-                  </p>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-maporte-orange rounded-full animate-pulse"></div>
-                    <span className="text-maporte-orange font-roboto font-medium text-sm">
-                      {realization.benefit}
+              <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2">
+                {/* Image container avec overlay sophistiqué */}
+                <div className="relative overflow-hidden">
+                  <div className={`
+                    ${index % 4 === 0 ? 'aspect-[3/4]' : 'aspect-[4/3]'}
+                    overflow-hidden
+                  `}>
+                    <img
+                      src={realization.image}
+                      alt={realization.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+                    />
+                  </div>
+                  
+                  {/* Gradient overlay raffiné */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-maporte-black/90 via-maporte-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Badge catégorie flottant */}
+                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-roboto font-medium bg-white/90 backdrop-blur-sm text-maporte-black">
+                      {realization.category}
                     </span>
                   </div>
+
+                  {/* Contenu principal au survol */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out">
+                    <h3 className="text-xl font-jost font-semibold mb-3 leading-tight">
+                      {realization.title}
+                    </h3>
+                    <p className="text-white/90 font-roboto text-sm leading-relaxed">
+                      {realization.description}
+                    </p>
+                    
+                    {/* Indicateur visuel élégant */}
+                    <div className="flex items-center mt-4 space-x-2">
+                      <div className="w-1 h-1 bg-maporte-orange rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-maporte-orange rounded-full animate-pulse" style={{animationDelay: '200ms'}}></div>
+                      <div className="w-1 h-1 bg-maporte-orange rounded-full animate-pulse" style={{animationDelay: '400ms'}}></div>
+                    </div>
+                  </div>
+
+                  {/* Effet de brillance au survol */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 </div>
 
-                {/* Corner accent */}
-                <div className="absolute top-4 right-4 w-12 h-12 border-2 border-white/30 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:rotate-45 transform origin-center"></div>
-              </div>
-
-              {/* Card content - visible by default on mobile */}
-              <div className="p-6 lg:hidden">
-                <h3 className="text-lg font-jost font-semibold text-maporte-black mb-2">
-                  {realization.title}
-                </h3>
-                <p className="text-maporte-gray-medium font-roboto mb-3">
-                  {realization.location} — <span className="text-maporte-orange font-medium">{realization.benefit}</span>
-                </p>
+                {/* Contenu visible par défaut sur mobile */}
+                <div className="p-6 lg:hidden">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-roboto font-medium text-maporte-orange bg-maporte-orange/10 px-2 py-1 rounded-full">
+                      {realization.category}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-jost font-semibold text-maporte-black mb-2 leading-tight">
+                    {realization.title}
+                  </h3>
+                  <p className="text-maporte-gray-medium font-roboto text-sm">
+                    {realization.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Call to action with subtle animation */}
-        <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '800ms'}}>
-          <div className="inline-flex items-center space-x-3 bg-white rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
-            <span className="text-maporte-black font-roboto font-medium">
-              Découvrez votre porte idéale
-            </span>
-            <div className="w-8 h-8 bg-maporte-orange rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-300">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+        {/* Call to action avec animation */}
+        <div className="text-center mt-20 animate-fade-in" style={{animationDelay: '1000ms'}}>
+          <div className="inline-flex items-center space-x-4 bg-white rounded-2xl px-8 py-6 shadow-xl hover:shadow-2xl transition-all duration-500 group cursor-pointer border border-maporte-orange/10">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-maporte-orange to-maporte-orange/80 rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <p className="text-maporte-black font-jost font-semibold text-lg">
+                  Prêt à créer la vôtre ?
+                </p>
+                <p className="text-maporte-gray-medium font-roboto text-sm">
+                  Découvrez nos solutions sur mesure
+                </p>
+              </div>
             </div>
           </div>
         </div>
