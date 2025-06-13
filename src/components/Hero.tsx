@@ -1,5 +1,4 @@
-
-import { Shield, Thermometer, Brush, Clock, Star } from 'lucide-react';
+import { Shield, Thermometer, Brush, Clock } from 'lucide-react';
 interface HeroProps {
   onShowForm: () => void;
 }
@@ -23,7 +22,7 @@ export const Hero = ({
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-jost font-semibold text-maporte-black leading-relaxed">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-jost font-semibold text-maporte-black leading-tight">
                 La porte d'entrée sur mesure qui{' '}
                 <span className="text-maporte-orange">sécurise</span>,{' '}
                 <span className="text-maporte-orange">isole</span> et{' '}
@@ -86,10 +85,7 @@ export const Hero = ({
             {/* Floating badge */}
             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-maporte-orange/20">
               <div className="text-center">
-                <div className="flex items-center justify-center gap-1 text-2xl font-jost font-semibold text-maporte-orange">
-                  <span>5/5</span>
-                  <Star className="w-5 h-5 fill-current" />
-                </div>
+                <div className="text-2xl font-jost font-semibold text-maporte-orange">5/5</div>
                 <div className="text-sm text-maporte-gray-medium font-roboto">39 avis Google</div>
               </div>
             </div>
