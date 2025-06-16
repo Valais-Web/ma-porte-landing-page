@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft, Star, Shield, CheckCircle } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
@@ -45,7 +46,7 @@ export const LeadForm = () => {
       const { data, error } = await supabase
         .from('ma-porte-leads')
         .insert({
-          name: `${formData.firstName} ${formData.lastName}`,
+          first_name: formData.firstName,
           last_name: formData.lastName,
           phone: formData.phone,
           email: formData.email,
@@ -148,7 +149,7 @@ export const LeadForm = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} data-netlify="true" name="ma-porte-leads">
             {/* Hidden field for gclid */}
             <input type="hidden" name="gclid" value={formData.gclid} />
 
@@ -281,6 +282,7 @@ export const LeadForm = () => {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input 
                     type="text" 
+                    name="firstName"
                     placeholder="Prénom *" 
                     value={formData.firstName} 
                     onChange={e => setFormData({
@@ -292,6 +294,7 @@ export const LeadForm = () => {
                   />
                   <input 
                     type="text" 
+                    name="lastName"
                     placeholder="Nom *" 
                     value={formData.lastName} 
                     onChange={e => setFormData({
@@ -304,6 +307,7 @@ export const LeadForm = () => {
                 </div>
                 <input 
                   type="tel" 
+                  name="phone"
                   placeholder="Téléphone *" 
                   value={formData.phone} 
                   onChange={e => setFormData({
@@ -315,6 +319,7 @@ export const LeadForm = () => {
                 />
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="Email *" 
                   value={formData.email} 
                   onChange={e => setFormData({
@@ -326,6 +331,7 @@ export const LeadForm = () => {
                 />
                 <input 
                   type="text" 
+                  name="postalCode"
                   placeholder="Code postal *" 
                   value={formData.postalCode} 
                   onChange={e => setFormData({
