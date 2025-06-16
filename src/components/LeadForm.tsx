@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft, Star, Shield, CheckCircle } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 export const LeadForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     project: '',
     priority: '',
@@ -13,7 +17,8 @@ export const LeadForm = () => {
     lastName: '',
     phone: '',
     email: '',
-    postalCode: ''
+    postalCode: '',
+    gclid: new URLSearchParams(window.location.search).get('gclid') || ''
   });
 
   const totalSteps = 5;
@@ -31,10 +36,81 @@ export const LeadForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      // Store lead in database
+      const { data, error } = await supabase
+        .from('ma-porte-leads')
+        .insert({
+          name: `${formData.firstName} ${formData.lastName}`,
+          last_name: formData.lastName,
+          phone: formData.phone,
+          email: formData.email,
+          zip: formData.postalCode ? parseInt(formData.postalCode) : null,
+          gclid: formData.gclid,
+          project_type: formData.project,
+          priority: formData.priority,
+          budget: formData.budget,
+          timeframe: formData.timeline
+        })
+        .select()
+        .single();
+
+      if (error) {
+        console.error('Database error:', error);
+        throw error;
+      }
+
+      console.log('Lead stored successfully:', data);
+
+      // Send email notification
+      const { error: emailError } = await supabase.functions.invoke('send-lead-notification', {
+        body: {
+          leadData: {
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            phone: formData.phone,
+            postalCode: formData.postalCode,
+            project: formData.project,
+            priority: formData.priority,
+            budget: formData.budget,
+            timeline: formData.timeline,
+            gclid: formData.gclid
+          }
+        }
+      });
+
+      if (emailError) {
+        console.error('Email error:', emailError);
+        // Don't throw here - lead is saved, email is nice to have
+        toast({
+          title: "Lead enregistré",
+          description: "Votre demande a été enregistrée mais l'email de notification a échoué.",
+          variant: "default",
+        });
+      }
+
+      setIsSubmitted(true);
+      
+      toast({
+        title: "Succès",
+        description: "Votre demande a été enregistrée avec succès !",
+        variant: "default",
+      });
+
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur s'est produite lors de l'envoi du formulaire. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -73,6 +149,9 @@ export const LeadForm = () => {
           </div>
 
           <form onSubmit={handleSubmit}>
+            {/* Hidden field for gclid */}
+            <input type="hidden" name="gclid" value={formData.gclid} />
+
             {/* Step 1: Project Type */}
             {currentStep === 1 && (
               <div className="space-y-6">
@@ -266,6 +345,7 @@ export const LeadForm = () => {
                   type="button" 
                   onClick={handlePrev} 
                   className="flex items-center px-4 py-2 text-maporte-gray-medium hover:text-maporte-black transition-colors"
+                  disabled={isSubmitting}
                 >
                   <ChevronLeft className="w-5 h-5 mr-1" />
                   Précédent
@@ -278,6 +358,7 @@ export const LeadForm = () => {
                   onClick={handleNext} 
                   className="btn-primary ml-auto flex items-center" 
                   disabled={
+                    isSubmitting ||
                     (currentStep === 1 && !formData.project) ||
                     (currentStep === 2 && !formData.priority) ||
                     (currentStep === 3 && !formData.budget) ||
@@ -288,8 +369,12 @@ export const LeadForm = () => {
                   <ChevronRight className="w-5 h-5 ml-1" />
                 </button>
               ) : (
-                <button type="submit" className="btn-primary ml-auto">
-                  Recevoir mon devis
+                <button 
+                  type="submit" 
+                  className="btn-primary ml-auto"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Envoi en cours...' : 'Recevoir mon devis'}
                 </button>
               )}
             </div>
