@@ -149,8 +149,14 @@ export const LeadForm = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} data-netlify="true" name="ma-porte-leads">
-            {/* Hidden field for gclid */}
+          <form onSubmit={handleSubmit} name="ma-porte-leads" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            {/* Hidden fields for Netlify */}
+            <input type="hidden" name="form-name" value="ma-porte-leads" />
+            <p hidden>
+              <label>
+                Don't fill this out: <input name="bot-field" />
+              </label>
+            </p>
             <input type="hidden" name="gclid" value={formData.gclid} />
 
             {/* Step 1: Project Type */}
