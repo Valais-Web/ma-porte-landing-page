@@ -14,6 +14,7 @@ export type Database = {
           budget: string | null
           created_at: string
           email: string | null
+          gclid: string | null
           id: number
           last_name: string | null
           name: string | null
@@ -27,6 +28,7 @@ export type Database = {
           budget?: string | null
           created_at?: string
           email?: string | null
+          gclid?: string | null
           id?: number
           last_name?: string | null
           name?: string | null
@@ -40,6 +42,7 @@ export type Database = {
           budget?: string | null
           created_at?: string
           email?: string | null
+          gclid?: string | null
           id?: number
           last_name?: string | null
           name?: string | null
