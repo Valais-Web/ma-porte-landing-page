@@ -14,10 +14,10 @@ export type Database = {
           budget: string | null
           created_at: string
           email: string | null
+          first_name: string | null
           gclid: string | null
           id: number
           last_name: string | null
-          name: string | null
           phone: string | null
           priority: string | null
           project_type: string | null
@@ -28,10 +28,10 @@ export type Database = {
           budget?: string | null
           created_at?: string
           email?: string | null
+          first_name?: string | null
           gclid?: string | null
           id?: number
           last_name?: string | null
-          name?: string | null
           phone?: string | null
           priority?: string | null
           project_type?: string | null
@@ -42,10 +42,10 @@ export type Database = {
           budget?: string | null
           created_at?: string
           email?: string | null
+          first_name?: string | null
           gclid?: string | null
           id?: number
           last_name?: string | null
-          name?: string | null
           phone?: string | null
           priority?: string | null
           project_type?: string | null
