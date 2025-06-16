@@ -42,7 +42,7 @@ export const LeadForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Store lead in database
+      // Store lead in database first
       const { data, error } = await supabase
         .from('ma-porte-leads')
         .insert({
@@ -93,6 +93,27 @@ export const LeadForm = () => {
           variant: "default",
         });
       }
+
+      // Now submit to Netlify
+      const form = e.currentTarget as HTMLFormElement;
+      const netlifyFormData = new FormData();
+      netlifyFormData.append('form-name', 'ma-porte-leads');
+      netlifyFormData.append('gclid', formData.gclid);
+      netlifyFormData.append('project', formData.project);
+      netlifyFormData.append('priority', formData.priority);
+      netlifyFormData.append('budget', formData.budget);
+      netlifyFormData.append('timeline', formData.timeline);
+      netlifyFormData.append('firstName', formData.firstName);
+      netlifyFormData.append('lastName', formData.lastName);
+      netlifyFormData.append('phone', formData.phone);
+      netlifyFormData.append('email', formData.email);
+      netlifyFormData.append('postalCode', formData.postalCode);
+
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(netlifyFormData as any).toString()
+      });
 
       setIsSubmitted(true);
       
