@@ -38,7 +38,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailContent = `
       <h2>Nouvelle demande de devis - Ma Porte</h2>
-      
+
       <h3>Informations du contact</h3>
       <ul>
         <li><strong>Nom:</strong> ${leadData.name}</li>
@@ -62,7 +62,9 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification email to Ma Porte team
     const emailResponse = await resend.emails.send({
       from: "Ma Porte <onboarding@resend.dev>",
-      to: ["info@ma-porte.ch"], // Replace with your actual email
+      to: ["ludo@maporte.ch"],
+      reply_to: leadData.email,
+      bcc: ["hippolyte@adineo.ch"],
       subject: `Nouvelle demande de devis - ${leadData.name}`,
       html: emailContent,
     });
@@ -70,27 +72,27 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Email sent successfully:", emailResponse);
 
     // Send confirmation email to the lead
-    const confirmationResponse = await resend.emails.send({
-      from: "Ma Porte <onboarding@resend.dev>",
-      to: [leadData.email],
-      subject: "Confirmation de votre demande - Ma Porte",
-      html: `
-        <h2>Merci pour votre demande !</h2>
-        <p>Bonjour ${leadData.name.split(' ')[0]},</p>
-        <p>Nous avons bien reçu votre demande de devis pour votre projet de ${leadData.project.toLowerCase()}.</p>
-        <p>Un expert Ma Porte vous rappellera sous 24 h (jours ouvrés) pour valider vos choix et établir un devis précis.</p>
-        <p>À très bientôt !</p>
-        <p><strong>L'équipe Ma Porte</strong></p>
-      `,
-    });
+    // const confirmationResponse = await resend.emails.send({
+    //   from: "Ma Porte <onboarding@resend.dev>",
+    //   to: [leadData.email],
+    //   subject: "Confirmation de votre demande - Ma Porte",
+    //   html: `
+    //     <h2>Merci pour votre demande !</h2>
+    //     <p>Bonjour ${leadData.name.split(' ')[0]},</p>
+    //     <p>Nous avons bien reçu votre demande de devis pour votre projet de ${leadData.project.toLowerCase()}.</p>
+    //     <p>Un expert Ma Porte vous rappellera sous 24 h (jours ouvrés) pour valider vos choix et établir un devis précis.</p>
+    //     <p>À très bientôt !</p>
+    //     <p><strong>L'équipe Ma Porte</strong></p>
+    //   `,
+    // });
 
-    console.log("Confirmation email sent:", confirmationResponse);
+    // console.log("Confirmation email sent:", confirmationResponse);
 
     return new Response(
-      JSON.stringify({ 
-        success: true, 
+      JSON.stringify({
+        success: true,
         emailId: emailResponse.data?.id,
-        confirmationId: confirmationResponse.data?.id 
+        confirmationId: confirmationResponse.data?.id
       }),
       {
         status: 200,
