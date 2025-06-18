@@ -4,6 +4,13 @@ import { ChevronRight, ChevronLeft, Star, Shield, CheckCircle } from 'lucide-rea
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
+// Declare dataLayer for TypeScript
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 export const LeadForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -114,6 +121,27 @@ export const LeadForm = () => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(netlifyFormData as any).toString()
       });
+
+      // Push form data to dataLayer
+      if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({
+          event: 'form_submit',
+          form_name: 'ma-porte-leads',
+          form_data: {
+            project: formData.project,
+            priority: formData.priority,
+            budget: formData.budget,
+            timeline: formData.timeline,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            phone: formData.phone,
+            email: formData.email,
+            postalCode: formData.postalCode,
+            gclid: formData.gclid
+          }
+        });
+        console.log('Form data pushed to dataLayer');
+      }
 
       setIsSubmitted(true);
       
