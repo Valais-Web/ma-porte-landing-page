@@ -125,7 +125,7 @@ export const LeadForm = () => {
       // Push form data to dataLayer
       if (typeof window !== 'undefined' && window.dataLayer) {
         window.dataLayer.push({
-          event: 'form_submit',
+          event: 'form_submitLP',
           form_name: 'ma-porte-leads',
           form_data: {
             project: formData.project,
@@ -144,7 +144,7 @@ export const LeadForm = () => {
       }
 
       setIsSubmitted(true);
-      
+
       toast({
         title: "Succès",
         description: "Votre demande a été enregistrée avec succès !",
@@ -220,16 +220,16 @@ export const LeadForm = () => {
                 <div className="grid gap-4">
                   {['Rénovation', 'Construction neuve'].map(option => (
                     <label key={option} className="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-maporte-orange transition-colors">
-                      <input 
-                        type="radio" 
-                        name="project" 
-                        value={option} 
-                        checked={formData.project === option} 
+                      <input
+                        type="radio"
+                        name="project"
+                        value={option}
+                        checked={formData.project === option}
                         onChange={e => setFormData({
                           ...formData,
                           project: e.target.value
-                        })} 
-                        className="mr-3 text-maporte-orange" 
+                        })}
+                        className="mr-3 text-maporte-orange"
                       />
                       <span className="font-roboto">{option}</span>
                     </label>
@@ -250,16 +250,16 @@ export const LeadForm = () => {
                 <div className="grid gap-4">
                   {['Isolation & économies', 'Design & personnalisation', 'Sécurité renforcée'].map(option => (
                     <label key={option} className="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-maporte-orange transition-colors">
-                      <input 
-                        type="radio" 
-                        name="priority" 
-                        value={option} 
-                        checked={formData.priority === option} 
+                      <input
+                        type="radio"
+                        name="priority"
+                        value={option}
+                        checked={formData.priority === option}
                         onChange={e => setFormData({
                           ...formData,
                           priority: e.target.value
-                        })} 
-                        className="mr-3 text-maporte-orange" 
+                        })}
+                        className="mr-3 text-maporte-orange"
                       />
                       <span className="font-roboto">{option}</span>
                     </label>
@@ -280,16 +280,16 @@ export const LeadForm = () => {
                 <div className="grid gap-4">
                   {['< 5 000 CHF', '5–10 000 CHF', '> 10 000 CHF', 'Je ne sais pas encore'].map(option => (
                     <label key={option} className="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-maporte-orange transition-colors">
-                      <input 
-                        type="radio" 
-                        name="budget" 
-                        value={option} 
-                        checked={formData.budget === option} 
+                      <input
+                        type="radio"
+                        name="budget"
+                        value={option}
+                        checked={formData.budget === option}
                         onChange={e => setFormData({
                           ...formData,
                           budget: e.target.value
-                        })} 
-                        className="mr-3 text-maporte-orange" 
+                        })}
+                        className="mr-3 text-maporte-orange"
                       />
                       <span className="font-roboto">{option}</span>
                     </label>
@@ -307,16 +307,16 @@ export const LeadForm = () => {
                 <div className="grid gap-4">
                   {['< 1 mois', '1–3 mois', '> 3 mois'].map(option => (
                     <label key={option} className="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-maporte-orange transition-colors">
-                      <input 
-                        type="radio" 
-                        name="timeline" 
-                        value={option} 
-                        checked={formData.timeline === option} 
+                      <input
+                        type="radio"
+                        name="timeline"
+                        value={option}
+                        checked={formData.timeline === option}
                         onChange={e => setFormData({
                           ...formData,
                           timeline: e.target.value
-                        })} 
-                        className="mr-3 text-maporte-orange" 
+                        })}
+                        className="mr-3 text-maporte-orange"
                       />
                       <span className="font-roboto">{option}</span>
                     </label>
@@ -335,66 +335,66 @@ export const LeadForm = () => {
                   Un expert Ma Porte vous rappelle sous 24 h.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="firstName"
-                    placeholder="Prénom *" 
-                    value={formData.firstName} 
+                    placeholder="Prénom *"
+                    value={formData.firstName}
                     onChange={e => setFormData({
                       ...formData,
                       firstName: e.target.value
-                    })} 
-                    className="p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none" 
-                    required 
+                    })}
+                    className="p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none"
+                    required
                   />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="lastName"
-                    placeholder="Nom *" 
-                    value={formData.lastName} 
+                    placeholder="Nom *"
+                    value={formData.lastName}
                     onChange={e => setFormData({
                       ...formData,
                       lastName: e.target.value
-                    })} 
-                    className="p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none" 
-                    required 
+                    })}
+                    className="p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none"
+                    required
                   />
                 </div>
-                <input 
-                  type="tel" 
+                <input
+                  type="tel"
                   name="phone"
-                  placeholder="Téléphone *" 
-                  value={formData.phone} 
+                  placeholder="Téléphone *"
+                  value={formData.phone}
                   onChange={e => setFormData({
                     ...formData,
                     phone: e.target.value
-                  })} 
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none" 
-                  required 
+                  })}
+                  className="w-full p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none"
+                  required
                 />
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="email"
-                  placeholder="Email *" 
-                  value={formData.email} 
+                  placeholder="Email *"
+                  value={formData.email}
                   onChange={e => setFormData({
                     ...formData,
                     email: e.target.value
-                  })} 
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none" 
-                  required 
+                  })}
+                  className="w-full p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none"
+                  required
                 />
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   name="postalCode"
-                  placeholder="Code postal *" 
-                  value={formData.postalCode} 
+                  placeholder="Code postal *"
+                  value={formData.postalCode}
                   onChange={e => setFormData({
                     ...formData,
                     postalCode: e.target.value
-                  })} 
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none" 
-                  required 
+                  })}
+                  className="w-full p-3 border border-gray-200 rounded-lg focus:border-maporte-orange focus:outline-none"
+                  required
                 />
               </div>
             )}
@@ -402,9 +402,9 @@ export const LeadForm = () => {
             {/* Navigation Buttons */}
             <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
               {currentStep > 1 && (
-                <button 
-                  type="button" 
-                  onClick={handlePrev} 
+                <button
+                  type="button"
+                  onClick={handlePrev}
                   className="flex items-center px-4 py-2 text-maporte-gray-medium hover:text-maporte-black transition-colors"
                   disabled={isSubmitting}
                 >
@@ -412,12 +412,12 @@ export const LeadForm = () => {
                   Précédent
                 </button>
               )}
-              
+
               {currentStep < totalSteps ? (
-                <button 
-                  type="button" 
-                  onClick={handleNext} 
-                  className="btn-primary ml-auto flex items-center" 
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  className="btn-primary ml-auto flex items-center"
                   disabled={
                     isSubmitting ||
                     (currentStep === 1 && !formData.project) ||
@@ -430,8 +430,8 @@ export const LeadForm = () => {
                   <ChevronRight className="w-5 h-5 ml-1" />
                 </button>
               ) : (
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="btn-primary ml-auto"
                   disabled={isSubmitting}
                 >
