@@ -62,7 +62,9 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification email to Ma Porte team
     const emailResponse = await resend.emails.send({
       from: "Ma Porte <onboarding@resend.dev>",
-      to: ["info@ma-porte.ch"], // Replace with your actual email
+      to: ["ludo@maporte.ch"],
+      reply_to: leadData.email,
+      bcc: ["hippolyte@adineo.ch"],
       subject: `Nouvelle demande de devis - ${leadData.name}`,
       html: emailContent,
     });
