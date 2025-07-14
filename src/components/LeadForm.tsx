@@ -19,7 +19,7 @@ export const LeadForm = () => {
   const [formData, setFormData] = useState({
     project: '',
     priority: '',
-    budget: '',
+    housingType: '',
     timeline: '',
     firstName: '',
     lastName: '',
@@ -61,7 +61,7 @@ export const LeadForm = () => {
           gclid: formData.gclid,
           project_type: formData.project,
           priority: formData.priority,
-          budget: formData.budget,
+          housing_type: formData.housingType,
           timeframe: formData.timeline
         })
         .select()
@@ -84,7 +84,7 @@ export const LeadForm = () => {
             postalCode: formData.postalCode,
             project: formData.project,
             priority: formData.priority,
-            budget: formData.budget,
+            housingType: formData.housingType,
             timeline: formData.timeline,
             gclid: formData.gclid
           }
@@ -108,7 +108,7 @@ export const LeadForm = () => {
       netlifyFormData.append('gclid', formData.gclid);
       netlifyFormData.append('project', formData.project);
       netlifyFormData.append('priority', formData.priority);
-      netlifyFormData.append('budget', formData.budget);
+      netlifyFormData.append('housingType', formData.housingType);
       netlifyFormData.append('timeline', formData.timeline);
       netlifyFormData.append('firstName', formData.firstName);
       netlifyFormData.append('lastName', formData.lastName);
@@ -125,12 +125,12 @@ export const LeadForm = () => {
       // Push form data to dataLayer
       if (typeof window !== 'undefined' && window.dataLayer) {
         window.dataLayer.push({
-          event: 'form_submitLP',
+          event: 'form_submit',
           form_name: 'ma-porte-leads',
           form_data: {
             project: formData.project,
             priority: formData.priority,
-            budget: formData.budget,
+            housingType: formData.housingType,
             timeline: formData.timeline,
             firstName: formData.firstName,
             lastName: formData.lastName,
@@ -268,26 +268,23 @@ export const LeadForm = () => {
               </div>
             )}
 
-            {/* Step 3: Budget */}
+            {/* Step 3: Housing Type */}
             {currentStep === 3 && (
               <div className="space-y-6">
                 <h2 className="text-2xl font-jost font-semibold text-maporte-black">
-                  Fourchette de budget
+                  Type d'habitation ?
                 </h2>
-                <p className="text-maporte-gray-medium">
-                  Estimation, sans engagement.
-                </p>
                 <div className="grid gap-4">
-                  {['< 5 000 CHF', '5–10 000 CHF', '> 10 000 CHF', 'Je ne sais pas encore'].map(option => (
+                  {['Maison individuelle', 'Immeuble', 'Commerce', 'Autre'].map(option => (
                     <label key={option} className="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-maporte-orange transition-colors">
                       <input
                         type="radio"
-                        name="budget"
+                        name="housingType"
                         value={option}
-                        checked={formData.budget === option}
+                        checked={formData.housingType === option}
                         onChange={e => setFormData({
                           ...formData,
-                          budget: e.target.value
+                          housingType: e.target.value
                         })}
                         className="mr-3 text-maporte-orange"
                       />
@@ -422,7 +419,7 @@ export const LeadForm = () => {
                     isSubmitting ||
                     (currentStep === 1 && !formData.project) ||
                     (currentStep === 2 && !formData.priority) ||
-                    (currentStep === 3 && !formData.budget) ||
+                    (currentStep === 3 && !formData.housingType) ||
                     (currentStep === 4 && !formData.timeline)
                   }
                 >
